@@ -1,0 +1,363 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* NavBar */
+.navbar {
+  #Logo {
+    height: 60px;
+  }
+
+  .dropdown-menu {
+    top: calc(100% + 5px) !important;
+    border-radius: 0px;
+  }
+}
+
+#hero {
+  height: 100vh;
+  background-image: url("../assets/HeaderImage.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .center-text {
+    border-style: groove;
+    width: 50vw;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    h1 {
+      margin: 15px;
+      padding-bottom: 15px;
+      border-bottom: dashed 1px;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      color: lightgrey;
+      margin-top: 0px;
+      margin-bottom: 5px;
+      font-weight: lighter;
+      text-transform: none;
+    }
+  }
+}
+#hero.casa-nova {
+  background-image: url("../assets/Gallery Images/Casa-Nova-Main.jpg");
+}
+
+.navbar-nav {
+  font-size: 18px;
+  width: 100% !important;
+
+  .nav-item {
+    text-align: center;
+  }
+}
+
+.btn-main a {
+  background-color: beige;
+  color: black;
+  font-weight: 500;
+}
+
+.row {
+  min-height: 60vh;
+}
+
+.carousel {
+  img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .carousel-item {
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      h5 {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+#benefits {
+  height: 70vh;
+
+  #carouselQuintaMilhao {
+    overflow: hidden;
+    padding: 0px;
+
+    img {
+      top: 25%;
+      transform: translateY(-25%);
+    }
+
+    .carousel-item {
+      transition: transform 2s ease, opacity 0.5s ease-out;
+      div {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      h1 {
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+        width: 50%;
+        text-align: center;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        display: table;
+        margin: 40px auto;
+        cursor: pointer;
+        transition: 0.6s;
+      }
+      h1:before,
+      h1:after {
+        content: attr(data-text);
+        transition: 0.6s;
+      }
+      h1:before {
+        left: 0;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        text-shadow: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+          0px 0px, 0px 0px, 0px 0px, 0px 0px;
+        -webkit-mask: repeating-linear-gradient(
+          45deg,
+          transparent 0 3px,
+          rgba(0, 0, 0, 0.5) 0 6px
+        );
+        mask: repeating-linear-gradient(
+          45deg,
+          transparent 0 3px,
+          rgba(0, 0, 0, 0.5) 0 6px
+        );
+      }
+      h1:hover {
+        transform: translate(-10px, -10px);
+      }
+      h1:hover:before {
+        text-shadow: 1px 1px, 2px 2px, 3px 3px, 4px 4px, 5px 5px, 6px 6px,
+          7px 7px, 8px 8px, 9px 9px, 10px 10px;
+      }
+    }
+  }
+}
+
+.book-stay {
+  flex-direction: column;
+
+  .error-container {
+    border: 1px solid red;
+    background-color: #fdd;
+    color: red;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+
+  form {
+    flex-direction: row;
+    > div {
+      flex-basis: 100%;
+    }
+    .summary {
+      padding: 10px;
+      text-align: center;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      color: #333;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1;
+      text-align: left;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 30vw;
+      right: 0;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        label {
+          flex: 1;
+        }
+
+        button {
+          background-color: #ddd;
+          border: none;
+          padding: 5px;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 20px;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        button:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+
+        input {
+          width: 50px;
+          text-align: center;
+          border: none;
+          background-color: #f7f7f7;
+        }
+      }
+    }
+    .show {
+      display: block;
+    }
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input,
+  .summary {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: unset;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  > div {
+    margin-top: 5% !important;
+  }
+}
+
+.slider {
+  height: 40vh;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+
+  .slide-track {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .slide {
+    flex: 0 0 auto; /* Allow slides to shrink and grow, but don't allow them to grow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    scroll-snap-align: start; /* Snap each slide to the start of the container */
+    margin-right: 10px; /* Add some spacing between slides */
+  }
+  .slide img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scale image to cover both dimensions of the container */
+    object-position: center center; /* Center the image within its container */
+    vertical-align: middle; /* Vertically center the image */
+  }
+}
+
+@media (min-width: 768px) {
+  .animate {
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+  #benefits-houses div {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    max-height: 80vh;
+    > div {
+      max-width: 100%;
+      max-height: 80vh;
+      video {
+        height: 80vh;
+        object-fit: fill;
+      }
+      > .card-body {
+        flex-direction: column;
+        height: 80vh;
+
+        .description {
+          flex: 0 0 50%;
+          align-content: end;
+          flex-direction: column;
+        }
+        > .book-stay {
+          flex: 0 0 50%;
+          justify-content: space-between; /* Distributes the items evenly */
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  #benefits-houses {
+    height: 80vh;
+
+    div {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      > div {
+        max-height: 40vh;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function BookingForm() {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);

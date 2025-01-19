@@ -4,7 +4,7 @@ function Carousel({ images }) {
   return (
     <div id="carouselExample" className="carousel slide">
       <div className="carousel-indicators">
-        {images.map((_, index) => (
+        {images?.map((_, index) => (
           <button
             type="button"
             data-bs-target="#carouselExample"

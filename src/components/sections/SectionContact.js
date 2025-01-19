@@ -11,7 +11,7 @@ const ContactInfo = () => (
           here.
         </p>
         <ContactDetails />
-        <div class="row mb-3" style="min-height: unset;">
+        <div class="row mb-3" style={{ "min-height": "unset;" }}>
           <PhoneDetail />
           <EmailDetail />
         </div>

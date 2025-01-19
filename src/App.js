@@ -27,6 +27,8 @@ function App() {
         setTitle("Housing & Hosting");
         setTagLine("Welcome to our platform");
     }
+
+    console.log("Location changed:", location.pathname);
   }, [location.pathname]); // Depend on pathname to update on route change
 
   return (
@@ -34,8 +36,8 @@ function App() {
       <NavBar />
       <Header title={title} tagLine={tagLine} />
       <Routes>
-        <Route path="/" exact component={<MainPage />} />
-        <Route path="/casa-nova" component={<CasaNovaPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/casa-nova" element={<CasaNovaPage />} />
       </Routes>
       <Footer />
     </div>
